@@ -2,13 +2,34 @@
 
 // Feel free to conduct research on the web, but do not ask anyone for help. Also, do not use any libraries (e.g. jQuery) or any publishing software such as Microsoft Word. If you’re unable to create this page (even after consulting the web), this role probably won’t be a good fit. We encourage you to spend some time to verify the logic in your solution.
 
-//html elements
+
 const grid = document.querySelector("#grid")
-for(let i = 0; i < 16 ; i++){
+
+//? creating a div for each grid element total of 16 being a 4-4 grid
+for (let i = 0; i < 16; i++) {
   let newDiv = document.createElement('div')
-    newDiv.id = `gridEl-${i}`
-    newDiv.style.width = "100px"
-    newDiv.style.height = "100px"
-    newDiv.style.backgroundColor = "#f5f1dc"
-    grid.appendChild(newDiv)
+  newDiv.id = `gridEl-${i}`
+  newDiv.style.width = "100px"
+  newDiv.style.height = "100px"
+  newDiv.style.backgroundColor = "#f5f1dc"
+  grid.appendChild(newDiv)
 }
+
+//create random color
+//select random square
+//start a timer
+//have variable for each square of last changed if greater than certain amount change the color
+//
+
+intervalId = setInterval(() => {
+
+  //pick random number from 0-15
+  const randomSquare = Math.floor(Math.random() * 16)
+
+  //pick a random color
+  const color = `hsl(${Math.random() * 360}, 50%, 50%)`
+
+  //loop through each color if not equal to the random selected number pass through it and add 250
+  //if that color is equal to 2000ms then change the color to another random color
+
+}, 250)

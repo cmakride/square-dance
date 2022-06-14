@@ -1,10 +1,18 @@
-*{
+* {
   background-color: rgb(41, 41, 41);
 }
 
-#grid-container{
+#grid-container {
   width: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+#grid {
+  display: grid;
+  border: 5px solid rgb(121, 121, 250);
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr 1fr;
+  gap: 0px 0px;
 }
