@@ -15,6 +15,26 @@ for (let i = 0; i < 16; i++) {
   grid.appendChild(newDiv)
 }
 
+//variables of change
+let grid0 = 0
+let grid1 = 0
+let grid2 = 0
+let grid3 = 0
+let grid4 = 0
+let grid5 = 0
+let grid6 = 0
+let grid7 = 0
+let grid8 = 0
+let grid9 = 0
+let grid10 = 0
+let grid11 = 0
+let grid12 = 0
+let grid13 = 0
+let grid14 = 0
+let grid15 = 0
+
+
+
 //create random color
 //select random square
 //start a timer
@@ -26,10 +46,19 @@ intervalId = setInterval(() => {
   //pick random number from 0-15
   const randomSquare = Math.floor(Math.random() * 16)
 
+
   //pick a random color
   const color = `hsl(${Math.random() * 360}, 50%, 50%)`
+  // const square = document.querySelector(`#gridEl-${i}`)
 
-  //loop through each color if not equal to the random selected number pass through it and add 250
-  //if that color is equal to 2000ms then change the color to another random color
+  for(let i = 0 ; i < 16 ; i++ ){
+
+    if(randomSquare === i){
+      const square = document.querySelector(`#gridEl-${i}`)
+      square.style.backgroundColor = color
+    }
+
+  }
+  
 
 }, 250)
