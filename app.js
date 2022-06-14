@@ -12,34 +12,10 @@ for (let i = 0; i < 16; i++) {
   newDiv.style.width = "100px"
   newDiv.style.height = "100px"
   newDiv.style.backgroundColor = "#f5f1dc"
+  newDiv.style.color = "#f5f1dc"
+  newDiv.innerHTML = "0"
   grid.appendChild(newDiv)
 }
-
-//variables of change
-let grid0 = 0
-let grid1 = 0
-let grid2 = 0
-let grid3 = 0
-let grid4 = 0
-let grid5 = 0
-let grid6 = 0
-let grid7 = 0
-let grid8 = 0
-let grid9 = 0
-let grid10 = 0
-let grid11 = 0
-let grid12 = 0
-let grid13 = 0
-let grid14 = 0
-let grid15 = 0
-
-
-
-//create random color
-//select random square
-//start a timer
-//have variable for each square of last changed if greater than certain amount change the color
-//
 
 intervalId = setInterval(() => {
 
@@ -49,16 +25,21 @@ intervalId = setInterval(() => {
 
   //pick a random color
   const color = `hsl(${Math.random() * 360}, 50%, 50%)`
-  // const square = document.querySelector(`#gridEl-${i}`)
 
-  for(let i = 0 ; i < 16 ; i++ ){
 
-    if(randomSquare === i){
-      const square = document.querySelector(`#gridEl-${i}`)
+  for (let i = 0; i < 16; i++) {
+    const square = document.querySelector(`#gridEl-${i}`)
+    let counter = parseInt(square.innerHTML)
+    counter += 250
+
+    if (randomSquare === i && counter > 2000) {
       square.style.backgroundColor = color
+      square.style.color = color
+      counter = 0
     }
 
+    square.innerHTML = counter
   }
-  
+
 
 }, 250)
