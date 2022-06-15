@@ -32,7 +32,7 @@ intervalId = setInterval(() => {
     let counter = parseInt(square.innerHTML)
     counter += 250
 
-    if (randomSquare === i && counter > 2000) {
+    if (randomSquare === i && counter >= 2000) {
       square.style.backgroundColor = color
       square.style.color = color
       counter = 0
